@@ -1,0 +1,25 @@
+<h1 class="mb-3">Last Transfers</h1>
+<div class="xp-social-profile-bottom text-center move-list" *ngIf="moves">
+    <div *ngFor="let move of slicedMoves">
+        <a class="row  py-1 mb-2" *ngIf="move" routerLink="/detail/{{move.toId}}">
+            <div class="col-4">
+                <div class="xp-social-profile-media">
+                    <p class="text-black"> {{move.to}}</p>
+                    <p class="mb-0 text-muted">To</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="xp-social-profile-followers">
+                    <p class="text-black">{{dateToString(move.at)}}</p>
+                    <p class="mb-0 text-muted">Date</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="xp-social-profile-following">
+                    <p class="text-black"><i class="fa fa-bitcoin"></i> {{move.amount}}</p>
+                    <p class="mb-0 text-muted">BTC amount</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

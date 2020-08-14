@@ -1,0 +1,23 @@
+<div class="xp-social-profile-img contacts-list mt-5 mb-5 text-center">
+    <!-- <h1 class="mb-5">Contacts</h1> -->
+    <div class="row justify-center">
+        <div class="contact add">
+            <a class="col-4 px-1" routerLink="/edit">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Add_user_icon_%28blue%29.svg/671px-Add_user_icon_%28blue%29.svg.png"
+                    class="rounded" alt="img">
+                <div class="xp-social-profile-subtitle">
+                    <p class="text-muted text-center"><i class="fas fa-plus"></i> Add Contact</p>
+                </div>
+            </a>
+        </div>
+        <div class="contact" *ngFor="let contact of contacts">
+            <a class="col-4 px-1" routerLink="/detail/{{contact._id}}">
+                <img [src]="contact.imgURL" class="rounded img-fluid" alt="img">
+                <div class="xp-social-profile-subtitle">
+                    <p class="text-muted">{{contact.name}}</p>
+                </div>
+            </a>
+            <p class="delete" title="delete contact" (click)="onRemove(contact,$event)"><i class="fa fa-trash"></i></p>
+        </div>
+    </div>
+</div>

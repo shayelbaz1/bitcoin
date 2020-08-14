@@ -1,0 +1,91 @@
+<div class="home-page contact-detail container pb-5" *ngIf="contact">
+    <div class="flex colum-layout justify-center text-center">
+        <div class="col-lg-8">
+
+            <div class="card-body">
+                <div class="xp-social-profile">
+
+                    <div class="back-edit flex space-between mb-5">
+                        <p (click)="goBack()" class="btn"><i class="fas fa-arrow-left"></i></p>
+                    </div>
+
+                    <div class="xp-social-profile-top">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="xp-social-profile-star py-3">
+                                    <i class="mdi mdi-star font-24"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="xp-social-profile-avatar text-center">
+                                    <img [src]="contact.imgURL" alt="user-profile" class="rounded-circle img-fluid">
+                                    <span class="xp-social-profile-live"></span>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="xp-social-profile-menu text-right py-3">
+                                    <i class="mdi mdi-dots-horizontal font-24"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xp-social-profile-middle text-center mb-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="xp-social-profile-title">
+                                    <h5 class="my-1 text-black">{{contact.name}}</h5>
+                                </div>
+                                <div class="xp-social-profile-desc mt-3">
+                                    <p class="text-muted">
+                                        Life is about money and joy
+                                        <br>
+                                        delivering it to others, is pure happiness...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="xp-social-profile-bottom text-center mb-5">
+                        <div class="row flex column-layout justify-center align-center">
+                            <div class="col-12">
+                                <div class="xp-social-profile-media pt-3">
+                                    <h5 class="text-black my-1"> {{contact._id}}</h5>
+                                    <p class="mb-0 text-muted"><i class="fa fa-id-card"></i> ID</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="xp-social-profile-followers pt-3">
+                                    <h5 class="text-black my-1"> {{contact.email}}</h5>
+                                    <p class="mb-0 text-muted"><i class="fa fa-envelope"></i> Email</p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="xp-social-profile-following pt-3">
+                                    <h5 class="text-black my-1">{{contact.phone}}</h5>
+                                    <p class="mb-0 text-muted"><i class="fa fa-phone"></i> Phone</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex align-center justify-center">
+
+                    </div>
+
+                    <div class="flex align-center justify-center mb-5">
+                        <input class="amount" type="number" placeholder="Amount" [(ngModel)]="amount" name="amount"
+                            (keyup.enter)="transfer()" />
+                        <button (click)="transfer()" class="btn btn-transfer">
+                            <span>₿ Transfer</span></button>
+                        <button (click)="edit(contact._id)" class="btn btn-primary ml-3">
+                            <i class="fas fa-pen"></i> Edit
+                            Contact</button>
+                        <button (click)="goBack()" class="btn btn-danger ml-3">
+                            <i class="fas fa-times"></i>
+                            Close</button>
+                    </div>
+
+                    <move-list [moves]="moves"></move-list>
+                </div>
+            </div>
+        </div>
+    </div>

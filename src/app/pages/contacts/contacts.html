@@ -1,0 +1,5 @@
+<section class="app-contacts col-12 text-center">
+    <h1 class="my-5">Contacts</h1>
+    <contact-search></contact-search>
+    <contact-list [contacts]="contacts" (remove)="onRemove($event)"></contact-list>
+</section>

@@ -1,0 +1,81 @@
+<div class="home-page container pb-5 mt-5">
+    <div class="flex colum-layout justify-center text-center">
+        <div class="col-lg-6">
+
+            <div class="card-body">
+                <div class="xp-social-profile">
+                    <div class="xp-social-profile-top">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="xp-social-profile-star py-3">
+                                    <i class="mdi mdi-star font-24"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="xp-social-profile-avatar text-center">
+                                    <img [src]="user.imgURL" alt="user-profile" class="rounded-circle img-fluid">
+                                    <span class="xp-social-profile-live"></span>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="xp-social-profile-menu text-right py-3">
+                                    <i class="mdi mdi-dots-horizontal font-24"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xp-social-profile-middle text-center">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="xp-social-profile-title">
+                                    <h5 class="my-1 text-black">{{user.name}}</h5>
+                                </div>
+                                <div class="xp-social-profile-desc mt-3">
+                                    <p class="text-muted">
+                                        Life is about money and joy
+                                        <br>
+                                        delivering it to others, is pure happiness...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xp-social-profile-bottom text-center">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="xp-social-profile-media pt-3">
+                                    <h5 class="text-black my-1"><i class="fab fa-bitcoin"></i> {{user.coins}}</h5>
+                                    <p class="mb-0 text-muted">Coins</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="xp-social-profile-followers pt-3">
+                                    <h5 class="text-black my-1">{{coinsToUSD}}</h5>
+                                    <p class="mb-0 text-muted">Current Balance</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="xp-social-profile-following pt-3">
+                                    <h5 class="text-black my-1">{{bitCoinUSDRate}}</h5>
+                                    <p class="mb-0 text-muted">BTC amount</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="xp-social-profile-img mt-5 mb-5">
+                <h1 class="mb-3">Top Contacts</h1>
+                <div class="row">
+                    <a class="col-4 px-1" *ngFor="let contact of contacts" routerLink="/detail/{{contact._id}}">
+                        <img [src]="contact.imgURL" class="rounded img-fluid" alt="img">
+                        <div class="xp-social-profile-subtitle">
+                            <p class="mb-3 text-muted">{{contact.name}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <move-list [moves]="user.moves" [showOnly]="3"></move-list>
+        </div>
+    </div>

@@ -1,0 +1,11 @@
+<section class="signup flex justify-center text-center mt-5">
+    <form class="form-signin" (submit)="signup($event)">
+        <img class="mb-4" src="./assets/logo.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputEmail" class="sr-only">Name</label>
+        <input type="text" class="form-control mb-3" placeholder="Name" [(ngModel)]="userToSave.name" name="name"
+            required autofocus>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2016-2020</p>
+    </form>
+</section>
